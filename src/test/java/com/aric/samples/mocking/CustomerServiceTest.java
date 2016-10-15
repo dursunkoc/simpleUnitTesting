@@ -1,5 +1,6 @@
 package com.aric.samples.mocking;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -17,6 +18,7 @@ public class CustomerServiceTest {
     public void setUp() {
         database = Mockito.mock(Database.class);
         Mockito.when(database.getCustomers()).thenReturn(Stream.of(customers));
+        Mockito.when(database.getCustomersByFirst("Dursun")).thenReturn(Arrays.asList(customers));
     }
 
     /**
