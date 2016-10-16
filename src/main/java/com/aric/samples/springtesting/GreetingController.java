@@ -18,4 +18,9 @@ public class GreetingController {
         return service.greet(name);
     }
 
+    @RequestMapping("/greetingKnownPeople")
+    public Greeting greetingWithId(@RequestParam(value = "id", defaultValue = "0") final Integer id) {
+        return service.greet(id);
+    }
+
 }
